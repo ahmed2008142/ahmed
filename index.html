@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الوحدة الثانية: المشتقات | ثالثة ثانوي</title>
-    <!-- تحميل Tailwind CSS لضمان التصميم الجاهز -->
+    <title>🎓 الوحدة الثانية نحو : المشتقات والمصادر والأسماء</title>
+    <!-- تحميل Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        /* التنسيقات الأساسية الخاصة بالخطوط والألوان */
+        /* التصميم الأصلي (الزمردي) مع خط الطاجوال */
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: #f8fafc; /* Slate 50 */
+            line-height: 1.75;
         }
         .container-box {
             background-color: white;
             padding: 1.5rem;
             border-radius: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
             border-top: 5px solid #10b981; /* Emerald 500 */
         }
         .section-title {
             color: #059669; /* Emerald 600 */
-            border-bottom: 3px solid #d1fae5; /* Emerald 100 */
+            border-bottom: 2px solid #a7f3d0; /* Emerald 200 */
             padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
         .rule-box {
             background-color: #ecfdf5; /* Emerald 50 */
-            border-right: 4px solid #059669;
+            border-right: 4px solid #059669; /* Emerald 600 */
             padding: 1rem;
             margin-top: 1rem;
             margin-bottom: 1rem;
@@ -37,27 +39,40 @@
         }
         .example {
             background-color: #f0f9ff; /* Sky 50 */
-            border-left: 3px solid #0ea5e9; /* Sky 500 */
+            border-left: 3px solid #38bdf8; /* Sky 400 */
             padding: 0.75rem;
             border-radius: 0.5rem;
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
             font-size: 0.95rem;
+            font-weight: 600;
         }
         .attention {
-            background-color: #fffbeb; /* Amber 50 */
-            border-right: 4px solid #f59e0b; /* Amber 600 */
+            background-color: #fef2f2; /* Red 50 */
+            border-left: 4px solid #ef4444; /* Red 500 */
             padding: 1rem;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
             border-radius: 0.5rem;
-            font-weight: 700;
+            font-weight: 600;
         }
-        /* لتحديد مكان الفهرس عند التمرير */
         @media (min-width: 1024px) {
             .sticky-aside {
                 position: sticky;
-                top: 2rem; /* ترك مسافة من الأعلى */
+                top: 2rem;
             }
+        }
+        /* تنسيق الجداول */
+        .table-custom th {
+            background-color: #059669; /* Emerald 600 */
+            color: white;
+            padding: 0.75rem;
+            font-weight: 700;
+            text-align: right;
+            border-bottom: 2px solid #047857;
+        }
+        .table-custom td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
         }
     </style>
 </head>
@@ -65,246 +80,312 @@
 
     <div class="max-w-6xl mx-auto">
         <!-- Header -->
-        <header class="text-center mb-10">
+        <header class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800">
-                🚀 المشتقات وعملها 🚀
+                ⭐ الوحدة الثانية: المشتقات والمصادر والأسماء (كاملة) ⭐
             </h1>
-            <p class="text-xl text-gray-600 mt-2">
-                الوحدة الثانية - النحو الثانوية العامة
+            <p class="text-xl text-emerald-600 mt-3 font-semibold">
+                كل ما تحتاجه في مكان واحد للوحدة الثانية.
             </p>
         </header>
 
         <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
             <!-- Sidebar / فهرس المحتويات -->
             <aside class="lg:col-span-1">
                 <div class="container-box sticky-aside">
-                    <h2 class="text-2xl font-bold mb-4 text-emerald-700">فهرس المحتويات</h2>
-                    <nav class="space-y-2 text-gray-600 font-medium">
-                        <a href="#intro" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg bg-gray-50">مقدمة عن المشتقات</a>
-                        <a href="#ism-fael" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">اسم الفاعل وصيغ المبالغة</a>
-                        <a href="#ism-mafool" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">اسم المفعول</a>
-                        <a href="#other-isra" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">اسم الزمان والمكان والآلة</a>
-                        <a href="#ism-tafdeel" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">اسم التفضيل</a>
-                        <a href="#amal-mushtaq" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg bg-red-50 text-red-700 border-r-4 border-red-400">🔥 عمل المشتقات (أهم درس)</a>
+                    <h2 class="text-2xl font-bold mb-4 text-emerald-700 border-b pb-2">فهرس المحتويات 📚</h2>
+                    <nav class="space-y-2 text-gray-700 font-medium">
+                        <a href="#amal-mushtaq" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg bg-red-100 border-r-4 border-red-500 font-extrabold">1. 🚨 أعمال المشتقات (فاعل، مفعول، مبالغة)</a>
+                        <a href="#tafdeel" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">2. اسم التفضيل وأحكامه</a>
+                        <a href="#zaman-makan" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">3. اسم الزمان والمكان</a>
+                        <a href="#masader-main" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg bg-emerald-50 border-r-4 border-emerald-300">4. المصادر: سماعية وقياسية</a>
+                        <a href="#masader-type" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">5. المصادر المتنوعة (ميمي، صناعي، مرة، هيئة)</a>
+                        <a href="#maqsour" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg bg-sky-50 border-r-4 border-sky-300">6. الاسم المقصور</a>
+                        <a href="#manqous" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">7. الاسم المنقوص</a>
+                        <a href="#mamdoud" class="block hover:text-emerald-500 transition duration-150 p-2 rounded-lg">8. الاسم الممدود</a>
                     </nav>
                 </div>
             </aside>
 
             <!-- الشرح التفصيلي -->
-            <main class="lg:col-span-2 space-y-10">
-
-                <!-- 1. المقدمة -->
-                <section id="intro" class="container-box">
-                    <h2 class="text-3xl section-title">مقدمة: ما هي المشتقات؟</h2>
-                    <p class="text-gray-700 leading-relaxed">
-                        **المشتقات** هي أسماء مأخوذة من الفعل، وتدل على معنى الفعل والحدث، وعلى من قام به، أو من وقع عليه، أو زمانه، أو مكانه، أو صفته. بمعنى آخر، هي عائلة الكلمات التي تشترك في جذر لغوي واحد (عادة ثلاثة أحرف).
-                    </p>
+            <main class="lg:col-span-2 space-y-12">
+                
+                <!-- 1. عمل المشتقات (فاعل، مفعول، مبالغة) -->
+                <section id="amal-mushtaq" class="container-box">
+                    <h2 class="text-3xl section-title bg-red-50 text-red-700 p-3 rounded-xl border-red-500 border">1. 🚨 عمل المشتقات (فاعل، مفعول، مبالغة)</h2>
+                    <p class="text-gray-700 leading-relaxed text-lg font-bold mb-4">عمل المشتق يعني أن يرفع فاعلاً أو ينصب مفعولاً به كأن فعله موجود تماماً.</p>
+                    
                     <div class="attention">
-                        <p class="font-bold text-lg text-amber-700">💡 أهمية الوحدة:</p>
-                        <p>التركيز في هذه الوحدة ينصب على كيفية صياغة هذه المشتقات، وكيفية **إعمالها** (أي كيف تعمل عمل فعلها وترفع فاعلاً أو تنصب مفعولاً به).</p>
+                        <p class="font-bold text-xl mb-2">شروط العمل المشتركة:</p>
+                        <ul class="list-disc pr-5 space-y-1">
+                            <li>**1. مقترن بـ (أل):** يعمل بلا شروط زمنية أو اعتمادات. (الكاتبُ الدرس، الكاتبُ: اسم فاعل عامل، الدرس: مفعول به).</li>
+                            <li>**2. مجرد من (أل):** يجب أن يدل على الحال أو الاستقبال + يعتمد على (مبتدأ، نفي، استفهام، موصوف، نداء).</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- اسم الفاعل وصيغ المبالغة وعملهما -->
+                    <h3 class="text-2xl font-bold mt-6 mb-3 text-emerald-600">أ. اسم الفاعل وصيغ المبالغة ✒️</h3>
+                    <div class="rule-box">
+                        <p class="font-bold text-xl text-emerald-800 mb-2">الصياغة:</p>
+                        <ul class="list-disc pr-5 space-y-2">
+                            <li>**اسم الفاعل:** (ثلاثي: فاعل - كاتب). (غير ثلاثي: ميم مضمومة وكسر ما قبل الآخر - <span class="text-red-600 font-bold">مُتْقِن</span>).</li>
+                            <li>**صيغ المبالغة:** (فعّال، مِفعال، فعول، فعيل، فَعِل) - <span class="text-red-600 font-bold">كذّاب، مِقْدام، صبور، سميع، حَذِر</span>.</li>
+                        </ul>
+                        <p class="font-bold text-xl text-emerald-800 mt-4 mb-2">عملهما:</p>
+                        <p class="text-gray-700">يرفعان **فاعلاً** وينصبان **مفعولاً به** (إذا كان الفعل متعدياً).</p>
+                        <div class="example">أمثلة: <br>
+                            - **أكاتبُ** خالدٌ الدرسَ؟ (خالد: فاعل مرفوع سدّ مسد الخبر. الدرس: مفعول به).<br>
+                            - هذا رجلٌ **سميعٌ** دعاءَ المظلوم. (دعاء: مفعول به لصيغة المبالغة).
+                        </div>
+                    </div>
+
+                    <!-- اسم المفعول وعمله -->
+                    <h3 class="text-2xl font-bold mt-6 mb-3 text-emerald-600">ب. اسم المفعول 🎯</h3>
+                    <div class="rule-box">
+                        <p class="font-bold text-xl text-emerald-800 mb-2">الصياغة:</p>
+                        <ul class="list-disc pr-5 space-y-2">
+                            <li>**من الثلاثي:** على وزن **مَفْعول** (مثل: ضَرَب - **مَضْروب**).</li>
+                            <li>**من غير الثلاثي:** على وزن اسم الفاعل لكن بـ **فتح ما قبل الآخر** (مثل: استخرج - **مُسْتَخْرَج**).</li>
+                        </ul>
+                        <p class="font-bold text-xl text-emerald-800 mt-4 mb-2">عمله:</p>
+                        <p class="text-gray-700">يرفع **نائب فاعل** فقط، لأنه يشتق من الفعل المبني للمجهول.</p>
+                        <div class="example">أمثلة: <br>
+                            - **المتقنُ** عملُه محبوب. (عملُه: نائب فاعل مرفوع لاسم المفعول).<br>
+                            - **أممنوحٌ** المجدُ جائزةً؟ (المجدُ: نائب فاعل سدّ مسد الخبر. جائزةً: مفعول به ثانٍ).
+                        </div>
                     </div>
                 </section>
-
-                <!-- 2. اسم الفاعل وصيغ المبالغة -->
-                <section id="ism-fael" class="container-box">
-                    <h2 class="text-3xl section-title">اسم الفاعل وصيغ المبالغة</h2>
-
-                    <h3 class="text-2xl font-bold mt-4 mb-2 text-emerald-600">أولاً: اسم الفاعل</h3>
-                    <p class="text-gray-700">اسم مشتق يدل على من قام بالفعل أو اتصف به.</p>
+                
+                <!-- 2. اسم التفضيل -->
+                <section id="tafdeel" class="container-box">
+                    <h2 class="text-3xl section-title">2. اسم التفضيل 🏆</h2>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        اسم يدل على أن شيئين اشتركا في صفة، وزاد أحدهما على الآخر فيها. (على وزن **أَفْعَل** للمذكر و**فُعْلَى** للمؤنث).
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mt-4 mb-3 text-emerald-600">حالاته وأحكامه (٤ حالات)</h3>
                     <div class="rule-box">
-                        <p class="font-bold text-xl text-emerald-800 mb-2">قاعدة الصياغة:</p>
-                        <ul class="list-disc pr-5 space-y-2">
-                            <li>**من الثلاثي:** يُصاغ على وزن **"فاعل"**.
-                                <div class="example">مثال: كتب ← <span class="text-blue-600 font-bold">كاتب</span>، قام ← <span class="text-blue-600 font-bold">قائم</span>.</div>
-                            </li>
-                            <li>**من غير الثلاثي:** يُصاغ على وزن مضارعه، مع إبدال حرف المضارعة ميماً مضمومة، وكسر ما قبل آخره.
-                                <div class="example">مثال: استغفر ← يستغفر ← <span class="text-blue-600 font-bold">مُستَغفِر</span>، أخلص ← يُخلِص ← <span class="text-blue-600 font-bold">مُخلِص</span>.</div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-2xl font-bold mt-6 mb-2 text-emerald-600">ثانياً: صيغ المبالغة</h3>
-                    <p class="text-gray-700">هي أسماء مشتقة للدلالة على كثرة حدوث الفعل وزيادة وقوعه.</p>
-                    <div class="rule-box">
-                        <p class="font-bold text-xl text-emerald-800 mb-2">أوزانها المشهورة (تذكرها جيداً):</p>
-                        <ul class="list-disc pr-5 space-y-2">
-                            <li>**فَعّال:** مثال: علَم ← <span class="text-blue-600 font-bold">علاّم</span>.</li>
-                            <li>**مِفْعال:** مثال: أقدم ← <span class="text-blue-600 font-bold">مِقدام</span>.</li>
-                            <li>**فَعُول:** مثال: شكر ← <span class="text-blue-600 font-bold">شكور</span>.</li>
-                            <li>**فَعِيل:** مثال: سمَع ← <span class="text-blue-600 font-bold">سميع</span>.</li>
-                            <li>**فَعِل:** مثال: حذِر ← <span class="text-blue-600 font-bold">حذِر</span>.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- 3. اسم المفعول -->
-                <section id="ism-mafool" class="container-box">
-                    <h2 class="text-3xl section-title">اسم المفعول</h2>
-                    <p class="text-gray-700">اسم مشتق يدل على من وقع عليه الفعل (ويُصاغ فقط من الفعل المبني للمجهول).</p>
-
-                    <div class="rule-box">
-                        <p class="font-bold text-xl text-emerald-800 mb-2">قاعدة الصياغة:</p>
-                        <ul class="list-disc pr-5 space-y-2">
-                            <li>**من الثلاثي:** يُصاغ على وزن **"مفعول"**.
-                                <div class="example">مثال: سُئِل ← <span class="text-blue-600 font-bold">مسؤول</span>، كُتِب ← <span class="text-blue-600 font-bold">مكتوب</span>.</div>
-                                <div class="attention bg-amber-50 border-amber-600 text-amber-900 font-normal">
-                                    **تنبيه:** إذا كان الفعل الثلاثي أجوف (وسطه حرف علة) أو ناقصاً (آخره حرف علة) يُصاغ بطريقة خاصة (عن طريق المضارع):
-                                    <br> <span class="font-semibold">مثال الأجوف:</span> قال (قِيل) ← يقول ← <span class="text-red-600 font-bold">مَقول</span>.
-                                    <br> <span class="font-semibold">مثال الناقص:</span> دعا (دُعي) ← يدعو ← <span class="text-red-600 font-bold">مَدعوّ</span>.
-                                </div>
-                            </li>
-                            <li>**من غير الثلاثي:** يُصاغ على وزن مضارعه، مع إبدال حرف المضارعة ميماً مضمومة، وفتح ما قبل آخره.
-                                <div class="example">مثال: استُخدِم ← يُستخدَم ← <span class="text-blue-600 font-bold">مُستخدَم</span>، أُكرِم ← يُكرَم ← <span class="text-blue-600 font-bold">مُكرَم</span>.</div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- 4. اسم الزمان والمكان واسم الآلة -->
-                <section id="other-isra" class="container-box">
-                    <h2 class="text-3xl section-title">اسم الزمان والمكان واسم الآلة</h2>
-
-                    <h3 class="text-2xl font-bold mt-4 mb-2 text-emerald-600">اسم الزمان والمكان</h3>
-                    <p class="text-gray-700">اسمان مشتقان للدلالة على زمان أو مكان وقوع الفعل.</p>
-                    <div class="rule-box">
-                        <p class="font-bold text-xl text-emerald-800 mb-2">الصياغة (يشتركان في نفس الوزن):</p>
-                        <ul class="list-disc pr-5 space-y-2">
-                            <li>**من الثلاثي:** على وزن <span class="font-bold">مَفْعَل</span> أو <span class="font-bold">مَفْعِل</span>.</li>
-                            <li>**من غير الثلاثي:** على وزن اسم المفعول بالضبط (ميم مضمومة وفتح ما قبل الآخر).
-                                <div class="example">كيف نميز؟ <span class="font-bold text-red-600">التمييز يكون من خلال سياق الجملة فقط.</span>
-                                    <br> <span class="font-semibold">المساء</span> مُلتقَى الأهل. (زمان)
-                                    <br> <span class="font-semibold">المنزل</span> مُلتقَى الأهل. (مكان)
-                                    <br> الضيف <span class="font-semibold">مُلتقَى</span> به. (اسم مفعول)
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <h3 class="text-2xl font-bold mt-6 mb-2 text-emerald-600">اسم الآلة</h3>
-                    <p class="text-gray-700">اسم مشتق يدل على الأداة التي يؤدى بها الفعل.</p>
-                    <div class="rule-box">
-                        <p class="font-bold text-xl text-emerald-800 mb-2">أنواعه:</p>
-                        <ul class="list-disc pr-5 space-y-2">
-                            <li>**مشتق (قياسي):** وله أوزان قديمة (مِفْعَل، مِفْعَلة، مِفْعَال) وأوزان حديثة (فَعّالة، فاعِلة، فاعول).
-                                <div class="example">مثال: مِفتاح، مِكنسة، غسّالة.</div>
-                            </li>
-                            <li>**جامد (سماعي):** ليس له وزن صرفي معروف، بل يُسمع عن العرب.
-                                <div class="example">مثال: سيف، قلم، قدّوم.</div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- 5. اسم التفضيل -->
-                <section id="ism-tafdeel" class="container-box">
-                    <h2 class="text-3xl section-title">اسم التفضيل</h2>
-                    <p class="text-gray-700">اسم مشتق يدل على أن شيئين اشتركا في صفة، وزاد أحدهما على الآخر فيها. وزنه الأساسي هو **"أفْعَل"** للمذكر و**"فُعْلَى"** للمؤنث.</p>
-
-                    <div class="rule-box">
-                        <p class="font-bold text-xl text-emerald-800 mb-2">شروط الصياغة المباشرة (7 شروط يجب أن تتحقق):</p>
-                        <p class="text-gray-700">يُصاغ مباشرة على وزن "أفعل" إذا كان الفعل:</p>
-                        <ul class="list-decimal pr-5 space-y-2">
-                            <li>ثلاثياً.</li>
-                            <li>تاماً (ليس ناقصاً كـ 'كان' وأخواتها).</li>
-                            <li>مثبتاً (ليس منفياً).</li>
-                            <li>متصرفاً (ليس جامداً كـ 'عسى').</li>
-                            <li>قابلاً للتفاوت (ليس كـ 'مات' أو 'فني').</li>
-                            <li>مبنياً للمعلوم (ليس مبنياً للمجهول).</li>
-                            <li>ليس الوصف منه على وزن 'أفعل' الذي مؤنثه 'فعلاء' (كـ 'أحمر' مؤنثه 'حمراء').</li>
-                        </ul>
-                    </div>
-
-                    <div class="attention bg-amber-50 border-amber-600 text-amber-900">
-                        <p class="font-bold text-lg">🔥 حالات اسم التفضيل (أهم جزء):</p>
-                        <table class="min-w-full divide-y divide-gray-200 mt-3">
+                        <table class="table-auto w-full border-collapse border border-emerald-500 table-custom">
                             <thead>
-                                <tr class="bg-amber-100">
-                                    <th class="px-3 py-2 text-right text-xs font-medium text-gray-700 uppercase tracking-wider">الحالة</th>
-                                    <th class="px-3 py-2 text-right text-xs font-medium text-gray-700 uppercase tracking-wider">مثال</th>
-                                    <th class="px-3 py-2 text-right text-xs font-medium text-gray-700 uppercase tracking-wider">الحكم (مهم جداً)</th>
+                                <tr>
+                                    <th>الحالة</th>
+                                    <th>الحكم</th>
+                                    <th>مثال</th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
+                            <tbody>
                                 <tr>
-                                    <td class="px-3 py-2 whitespace-nowrap">1. مجرد من (أل) والإضافة.</td>
-                                    <td class="px-3 py-2 whitespace-nowrap">محمد أفضل من علي.</td>
-                                    <td class="px-3 py-2 whitespace-nowrap font-bold text-red-600">يلزم الإفراد والتذكير والتنكير، ويأتي بعده المفضل عليه بـ (من).</td>
+                                    <td class="font-bold text-red-600">1. مجرد من أل والإضافة</td>
+                                    <td>**يجب الإفراد والتذكير** (يلزمه الإفراد والتذكير).</td>
+                                    <td>خالد <span class="font-bold">أفضلُ</span> من علي. (أفضل لم تتغير).</td>
                                 </tr>
                                 <tr>
-                                    <td class="px-3 py-2 whitespace-nowrap">2. معرف بـ (أل).</td>
-                                    <td class="px-3 py-2 whitespace-nowrap">أنت <span class="font-bold">الأفضل</span>.</td>
-                                    <td class="px-3 py-2 whitespace-nowrap font-bold text-red-600">يجب المطابقة لما قبله (المفضل) في النوع والعدد، ولا يُذكر المفضل عليه.</td>
+                                    <td class="font-bold text-red-600">2. مقترن بـ (أل)</td>
+                                    <td>**يجب المطابقة** لما قبله (في النوع والعدد).</td>
+                                    <td>الطالب هو <span class="font-bold">الأفضلُ</span>. الطالبات هن <span class="font-bold">الفُضْلياتُ</span>.</td>
                                 </tr>
                                 <tr>
-                                    <td class="px-3 py-2 whitespace-nowrap">3. مضاف إلى نكرة.</td>
-                                    <td class="px-3 py-2 whitespace-nowrap">هما أفضل طالبين.</td>
-                                    <td class="px-3 py-2 whitespace-nowrap font-bold text-red-600">يلزم الإفراد والتذكير والتنكير، ويجب أن يطابق المضاف إليه المفضل في النوع.</td>
+                                    <td class="font-bold text-red-600">3. مضاف إلى نكرة</td>
+                                    <td>**يجب الإفراد والتذكير** (يلزمه الإفراد والتذكير).</td>
+                                    <td>هم <span class="font-bold">أفضلُ</span> طلابٍ. هن <span class="font-bold">أفضلُ</span> طالباتٍ.</td>
                                 </tr>
                                 <tr>
-                                    <td class="px-3 py-2 whitespace-nowrap">4. مضاف إلى معرفة.</td>
-                                    <td class="px-3 py-2 whitespace-nowrap">أنتما أفضلُ القوم (أو) <span class="font-bold">أفضلا</span> القوم.</td>
-                                    <td class="px-3 py-2 whitespace-nowrap font-bold text-red-600">يجوز فيه وجهان: <br> 1- الإفراد والتذكير (الأشهر). <br> 2- المطابقة للمفضل.</td>
+                                    <td class="font-bold text-red-600">4. مضاف إلى معرفة</td>
+                                    <td>**يجوز الأمران** (الإفراد والتذكير أو المطابقة).</td>
+                                    <td>أنت **أفضلُ** القومِ / أنت **فضلى** القومِ.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- 6. عمل المشتقات (أهم درس) -->
-                <section id="amal-mushtaq" class="container-box border-top-4 border-red-500">
-                    <h2 class="text-3xl section-title bg-red-50 text-red-700 p-2 rounded-lg">🔥 عمل المشتقات: اسم الفاعل، صيغ المبالغة، واسم المفعول</h2>
-                    <p class="text-gray-700 text-lg font-bold mb-4">يعني عمل المشتقات أن المشتق (اسم الفاعل أو صيغة المبالغة أو اسم المفعول) يعمل عمل فعله، فيرفع فاعلاً أو ينصب مفعولاً به.</p>
-
-                    <h3 class="text-2xl font-bold mt-4 mb-2 text-emerald-600">أولاً: عمل اسم الفاعل وصيغ المبالغة</h3>
-                    <p class="text-gray-700">يعملان عمل فعلهما المبني للمعلوم (يرفعان فاعلاً، وينصبان مفعولاً به إذا كان الفعل متعدياً).</p>
-                    <div class="rule-box bg-red-100 border-red-600">
-                        <p class="font-bold text-xl text-red-800 mb-2">شروط العمل:</p>
-                        <ul class="list-disc pr-5 space-y-2 text-red-900">
-                            <li>**الحالة الأولى (مقترن بـ "أل"):** يعمل دون شروط (ماضياً وحاضراً ومستقبلاً).
-                                <div class="example bg-red-50 border-red-400">مثال: <span class="font-bold">القائلُ الحقَّ</span> شجاع. (<span class="text-green-600 font-bold">الحقّ: مفعول به لاسم الفاعل العامل</span>).</div>
-                            </li>
-                            <li>**الحالة الثانية (مجرّد من "أل"):** يعمل بشرطين أساسيين:
-                                <ul class="list-disc pr-5">
-                                    <li>1. أن يدل على الحال أو الاستقبال (زمنياً).</li>
-                                    <li>2. أن يعتمد على (يسبق بـ): <span class="font-bold text-blue-600">مبتدأ، موصوف، نفي، استفهام، نداء، أو أن يقع حالاً.</span></li>
-                                </ul>
-                                <div class="example bg-red-50 border-red-400">مثال: <span class="font-bold">أَكاتبٌ</span> أخوك الدرسَ اليوم؟ (<span class="text-green-600 font-bold">كاتب: اسم فاعل عامل اعتمد على استفهام</span>).</div>
-                            </li>
+                <!-- 3. اسم الزمان والمكان -->
+                <section id="zaman-makan" class="container-box">
+                    <h2 class="text-3xl section-title">3. اسم الزمان والمكان 🕰️</h2>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        اسمان يدلان على زمن أو مكان وقوع الفعل.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mt-4 mb-3 text-emerald-600">الصياغة: المفتاح في سياق الجملة</h3>
+                    <div class="rule-box">
+                        <p class="font-bold text-xl text-emerald-800 mb-2">من الثلاثي:</p>
+                        <ul class="list-disc pr-5 space-y-2">
+                            <li>**على وزن مَفْعَل:** (إذا كان المضارع مفتوح أو مضموم العين، أو كان الفعل ناقصاً). <span class="font-bold text-red-600">لعب - مَلْعَب، طار - مَطار</span>.</li>
+                            <li>**على وزن مَفْعِل:** (إذا كان الفعل مثالاً واوياً، أو كان المضارع مكسور العين). <span class="font-bold text-red-600">وعد - مَوْعِد، جلس - مَجْلِس</span>.</li>
                         </ul>
+                        <p class="font-bold text-xl text-emerald-800 mt-4 mb-2">من غير الثلاثي:</p>
+                        <ul class="list-disc pr-5 space-y-2">
+                            <li>على وزن اسم المفعول (ميم مضمومة وفتح ما قبل الآخر). <span class="font-bold text-red-600">اجتمع - مُجْتَمَع</span>.</li>
+                        </ul>
+                        <div class="attention">
+                            **كيفية التمييز؟** التمييز بين (اسم الزمان/المكان/المفعول) من غير الثلاثي يكون من خلال سياق الجملة فقط.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. المصادر السماعيه والقياسيه -->
+                <section id="masader-main" class="container-box">
+                    <h2 class="text-3xl section-title">4. المصادر: السماعِية والقياسِية 📝</h2>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        المصدر هو اسم يدل على الحدث مجرداً من الزمن.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mt-4 mb-3 text-emerald-600">المصادر السماعِية (الثلاثي)</h3>
+                    <div class="rule-box">
+                        <p class="text-gray-700">جميع مصادر الفعل **الثلاثي** تعتبر **سماعِية** (بلا قاعدة وزنية ثابتة).</p>
+                        <div class="example">أمثلة: <span class="font-bold text-red-600">صناعة</span>، <span class="font-bold text-red-600">رحيل</span>، <span class="font-bold text-red-600">زراعة</span>.</div>
                     </div>
 
-                    <h3 class="text-2xl font-bold mt-6 mb-2 text-emerald-600">ثانياً: عمل اسم المفعول</h3>
-                    <p class="text-gray-700">يعمل عمل فعله المبني للمجهول (يرفع **نائب فاعل** فقط).</p>
-                    <div class="rule-box bg-red-100 border-red-600">
-                        <p class="font-bold text-xl text-red-800 mb-2">شروط العمل:</p>
-                        <p class="text-gray-700">تنطبق عليه شروط عمل اسم الفاعل وصيغ المبالغة بالتمام (مقترن بـ 'أل' أو يعتمد على استفهام/نفي/مبتدأ... إلخ).</p>
-                        <div class="example bg-red-50 border-red-400">مثال: هل <span class="font-bold">ممنوحٌ</span> المتفوقُ جائزةً؟
-                            <br>(<span class="text-green-600 font-bold">المتفوق: نائب فاعل لاسم المفعول العامل</span>، و<span class="text-green-600 font-bold">جائزة: مفعول به ثانٍ</span>).
+                    <h3 class="text-2xl font-bold mt-6 mb-3 text-emerald-600">المصادر القياسِية (غير الثلاثي)</h3>
+                    <div class="rule-box">
+                        <p class="text-gray-700">لها قاعدة ثابتة تشمل مصادر الفعل **الرباعي، والخماسي، والسداسي**.</p>
+                        <ul class="list-disc pr-5 space-y-2 mt-3">
+                            <li class="font-semibold">**الرباعي:** (أفعل - إفعال / فَعَّل - تفعيل / فاعل - فِعال أو مُفاعلة).</li>
+                            <li class="font-semibold">**الخماسي والسداسي:** (قياس محدد على وزن الماضي مع تغييرات).</li>
+                        </ul>
+                        <div class="example">أمثلة: <span class="font-bold text-blue-600">إحسان</span> (أحسن)، <span class="font-bold text-blue-600">انتقال</span> (انتقل)، <span class="font-bold text-blue-600">استعانة</span> (استعان).</div>
+                    </div>
+                </section>
+
+                <!-- 5. المصادر بأنواعها (ميمي، صناعي، مرة، هيئة) -->
+                <section id="masader-type" class="container-box">
+                    <h2 class="text-3xl section-title">5. المصادر بأنواعها المتنوعة</h2>
+
+                    <h3 class="text-2xl font-bold mt-4 mb-3 text-emerald-600">المصدر الميمي (مِفتاح التمييز: الميم)</h3>
+                    <div class="rule-box">
+                        <p class="text-gray-700">يبدأ بميم زائدة ويحل محل المصدر الأصلي.</p>
+                        <ul class="list-disc pr-5 space-y-2">
+                            <li>**من الثلاثي:** على وزن **"مَفْعَل"** أو **"مَفْعِل"**. (مثل: <span class="font-bold text-red-600">مَكْسَب، مَوْقِف</span>).</li>
+                            <li>**من غير الثلاثي:** على وزن اسم المفعول (ميم مضمومة وفتح ما قبل الآخر). (مثل: <span class="font-bold text-red-600">مُخْرَج</span>).</li>
+                        </ul>
+                        <div class="attention">
+                            **التفريق:** يصح أن تضع المصدر الأصلي مكانه: "هذا <span class="font-bold">مَطْلَعُ</span> الشمس" (مكان/زمان) vs "كان <span class="font-bold">مَطْلَعُ</span> القصيدة جيداً" (مصدر ميمي).
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mt-6 mb-3 text-emerald-600">المصدر الصناعي (مِفتاح التمييز: ياء مشددة وتاء مربوطة)</h3>
+                    <div class="rule-box">
+                        <p class="text-gray-700">زيادة ياء مشددة وتاء مربوطة على نهاية الاسم.</p>
+                        <div class="example">أمثلة: <span class="font-bold text-blue-600">الوطنية</span>، <span class="font-bold text-blue-600">الاشتراكية</span>.</div>
+                        <div class="attention">
+                            **تنبيه هام:** لا يُعرب صفة. إذا أُعرب صفة (نعت)، كان اسماً منسوباً. (مثال: هذه قضية **وطنية** ⬅️ اسم منسوب).
                         </div>
                     </div>
 
-                    <div class="attention bg-amber-50 border-amber-600 text-amber-900">
-                        <p class="font-bold text-lg">⚠️ تنبيهات هامة جداً في الامتحانات:</p>
+                    <h3 class="text-2xl font-bold mt-6 mb-3 text-emerald-600">اسم المرة واسم الهيئة</h3>
+                    <div class="rule-box">
+                        <table class="table-auto w-full border-collapse border border-emerald-500 table-custom">
+                            <thead>
+                                <tr>
+                                    <th>المصدر</th>
+                                    <th>من الثلاثي</th>
+                                    <th>من غير الثلاثي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-bold text-red-600">اسم المرة (للدلالة على العدد)</td>
+                                    <td>على وزن **فَعْلة** (مثل: <span class="font-bold">أكْلَة</span>)</td>
+                                    <td>مصدره الأصلي + تاء مربوطة (مثل: <span class="font-bold">انطلاقة</span>)</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold text-blue-600">اسم الهيئة (للدلالة على الشكل/الصفة)</td>
+                                    <td>على وزن **فِعْلة** (بكسر الفاء) (مثل: <span class="font-bold">جِلْسَة</span>)</td>
+                                    <td>لا يُصاغ قياسياً، بل يُوصف المصدر الأصلي (مثل: <span class="font-bold">إجلالُ العلماء</span>).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <!-- 6. الاسم المقصور -->
+                <section id="maqsour" class="container-box">
+                    <h2 class="text-3xl section-title">6. الاسم المقصور (ينتهي بألف) 💡</h2>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        اسم مُعرب ينتهي بألف لازمة مفتوح ما قبلها. (مثل: <span class="font-bold text-red-600">دنيا</span>، <span class="font-bold text-red-600">عصا</span>).
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mt-4 mb-3 text-emerald-600">حكم تثنيته وجمعه (جمع المؤنث السالم)</h3>
+                    <div class="rule-box">
                         <ul class="list-disc pr-5 space-y-2">
-                            <li>إذا كان المشتق **مُنَوَّناً** (عليه تنوين) أو غير مُنوَّن إذا كان آخره علة، فهو غالباً **عامل**.</li>
-                            <li>إذا حُذِف التنوين أو النون للإضافة، فهو **غير عامل**، وما بعده يُعرب **مضافاً إليه**.
-                                <div class="example">
-                                    المثال العامل: أنا <span class="font-bold">شاربٌ</span> القهوةَ. (القهوة: مفعول به)
-                                    <br>المثال غير العامل: أنا <span class="font-bold">شاربُ</span> القهوةِ. (القهوة: مضاف إليه)
-                                </div>
-                            </li>
-                            <li>إذا جاء بعد اسم المفعول كلمة مرفوعة، فهي غالباً **نائب فاعل**.</li>
+                            <li>**إذا كانت الألف ثالثة:** تُرد إلى أصلها (واو أو ياء). (مثل: فتى ← فتيان، عصا ← عصوان).</li>
+                            <li>**إذا كانت الألف رابعة فصاعداً:** تُقلب دائماً إلى **ياء**. (مثل: كبرى ← كبريان، مستشفى ← مستشفيان).</li>
+                            <li>**في جمع المذكر السالم:** تُحذف الألف ويبقى ما قبلها مفتوحاً. (مثل: مصطفى ← مصطفَون).</li>
                         </ul>
                     </div>
-
                 </section>
 
+                <!-- 7. الاسم المنقوص -->
+                <section id="manqous" class="container-box">
+                    <h2 class="text-3xl section-title">7. الاسم المنقوص (ينتهي بياء) 💡</h2>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        اسم مُعرب ينتهي بياء لازمة مكسور ما قبلها. (مثل: <span class="font-bold text-red-600">المهتدي</span>، <span class="font-bold text-red-600">السامي</span>).
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mt-4 mb-3 text-emerald-600">حكم حذف الياء</h3>
+                    <div class="attention">
+                        <p class="font-bold text-lg">تحذف الياء إذا كان:</p>
+                        <ul class="list-disc pr-5 space-y-1">
+                            <li>مجرداً من (أل) والإضافة.</li>
+                            <li>في حالتي الرفع أو الجر فقط.</li>
+                        </ul>
+                        <div class="example bg-red-100 border-red-500">مثال: <span class="font-bold text-red-800">مررت بداعٍ للخير</span>. (داعٍ: اسم مجرور وعلامة جره الكسرة المقدرة على الياء المحذوفة).</div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mt-4 mb-3 text-emerald-600">حكم تثنيته وجمعه</h3>
+                    <div class="rule-box">
+                        <ul class="list-disc pr-5 space-y-2">
+                            <li>**التثنية وجمع المؤنث السالم:** تبقى الياء، وإذا كانت محذوفة تُرد. (الداعي ← الداعيان / داعٍ ← داعيان).</li>
+                            <li>**جمع المذكر السالم:** تُحذف الياء، ويُضم ما قبل الواو (في الرفع) ويُكسر ما قبل الياء (في النصب والجر). (القاضي ← القاضُون / القاضِين).</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 8. الاسم الممدود -->
+                <section id="mamdoud" class="container-box">
+                    <h2 class="text-3xl section-title">8. الاسم الممدود (ينتهي بـ ـاء) 💡</h2>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        اسم مُعرب ينتهي بهمزة قبلها ألف زائدة. (مثل: <span class="font-bold text-red-600">إنشاء</span>، <span class="font-bold text-red-600">بناء</span>).
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mt-4 mb-3 text-emerald-600">أنواع الهمزة وأحكامها (مفتاح الحل)</h3>
+                    <div class="rule-box">
+                        <table class="table-auto w-full border-collapse border border-emerald-500 table-custom">
+                            <thead>
+                                <tr>
+                                    <th>نوع الهمزة</th>
+                                    <th>الحكم (التثنية والجمع)</th>
+                                    <th>مثال (تثنية)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-bold">1. أصلية (من جذر الكلمة)</td>
+                                    <td>يجب أن **تبقى** الهمزة.</td>
+                                    <td><span class="font-bold text-red-600">إنشاء</span> ← إنشاءان</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">2. زائدة للتأنيث</td>
+                                    <td>يجب أن **تُقلب واواً**.</td>
+                                    <td><span class="font-bold text-red-600">صحراء</span> ← صحراوان</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">3. منقلبة عن أصل (و/ي)</td>
+                                    <td>يجوز **الوجهان** (تبقى أو تُقلب واواً).</td>
+                                    <td><span class="font-bold text-red-600">سماء</span> ← سماءان / سماوان</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+
                 <!-- Footer -->
-                <footer class="text-center mt-10 p-4 bg-emerald-700 text-white rounded-lg">
+                <footer class="text-center mt-12 p-5 bg-emerald-700 text-white rounded-xl shadow-lg">
                     <p class="text-lg font-bold">
-                        تمنياتي لك بالتوفيق والنجاح!
+                         الوحدة الثانية كاملة !😁
                     </p>
                 </footer>
 
@@ -313,6 +394,4 @@
     </div>
 
 </body>
-
 </html>
-
